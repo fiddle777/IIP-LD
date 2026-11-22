@@ -5,22 +5,26 @@
     android:layout_height="match_parent">
 
     <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:labelFor="@id/name" android:text="@string/label_name" />
         <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <EditText android:id="@+id/name"
+            <LinearLayout android:layout_width="240dp" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:labelFor="@id/name" android:text="@string/label_name" />
+                <EditText android:id="@+id/name"
                 android:layout_width="240dp" android:layout_height="wrap_content"
                 android:minHeight="48dp" android:inputType="textCapWords"
-                android:autofillHints="name" android:hint="@string/name_hint" />
+                android:autofillHints="name" android:textColor="?android:attr/textColorPrimary" android:textColorHint="?android:attr/textColorPrimary" android:hint="@string/name_hint" />
+            </LinearLayout>
         </TableRow>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:labelFor="@id/department" android:text="@string/label_department" />
         <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <AutoCompleteTextView android:id="@+id/department"
+            <LinearLayout android:layout_width="240dp" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:labelFor="@id/department" android:text="@string/label_department" />
+                <AutoCompleteTextView android:id="@+id/department"
                 android:layout_width="240dp" android:layout_height="wrap_content"
                 android:minHeight="48dp" android:completionThreshold="1"
                 android:inputType="text" android:importantForAutofill="no"
-                android:hint="@string/department_hint" />
+                android:textColor="?android:attr/textColorPrimary" android:textColorHint="?android:attr/textColorPrimary" android:hint="@string/department_hint" />
+            </LinearLayout>
         </TableRow>
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
             android:labelFor="@id/rating" android:text="@string/label_rating" />
