@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Get the form controls from activity_main.xml.
         EditText name = findViewById(R.id.name);
         AutoCompleteTextView department = findViewById(R.id.department);
         RatingBar rating = findViewById(R.id.rating);
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Spinner city = findViewById(R.id.city);
         SwitchCompat active = findViewById(R.id.active);
 
+        // Read the department list from strings.xml and use it for suggestions.
         String[] departments = getResources().getStringArray(R.array.departments);
         department.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, departments));
@@ -52,12 +54,14 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show());
 
         time.setIs24HourView(true);
+        // The lab allows ratings from one to four, so reset zero to one.
         rating.setOnRatingBarChangeListener((bar, value, fromUser) -> {
             if (value < 1) {
                 bar.setRating(1);
             }
         });
 
+        // Read the form and show the summary when Saugoti is pressed.
         findViewById(R.id.submit).setOnClickListener(view -> {
             String title = name.getText().toString().trim();
             String summary = String.format(Locale.ROOT,
@@ -73,8 +77,10 @@ public class MainActivity extends AppCompatActivity {
             TextView message = snackbar.getView().findViewById(
                     com.google.android.material.R.id.snackbar_text);
             message.setMaxLines(10);
+            // Write the file only after the user confirms the summary.
             snackbar.setAction("Patvirtinu, informacija teisinga",
                     action -> saveSummary(fileName, summary));
+            // Show the retry message if the preview runs out of time.
             snackbar.addCallback(new Snackbar.Callback() {
                 @Override
                 public void onDismissed(Snackbar bar, int event) {
@@ -90,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveSummary(String fileName, String summary) {
+        // Save the summary in the app's private files folder.
         try (FileOutputStream file = openFileOutput(fileName, MODE_PRIVATE)) {
             file.write(summary.getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
