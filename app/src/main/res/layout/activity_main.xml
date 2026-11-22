@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3949AB"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- These two rows show dialog results and can also open the context menu. -->
+    <TextView
+        android:id="@+id/time_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:text="@string/hello_world" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/count_result"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/hello_world" />
-</FrameLayout>
+        android:minHeight="48dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:text="@string/second_text" />
+
+    <!-- The worker adds characters here, one at a time. -->
+    <TextView
+        android:id="@+id/character_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="12dp"
+        android:textSize="20sp" />
+</LinearLayout>
