@@ -1,38 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-            <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pavadinimas" />
-                <EditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Padalinys" />
-                <AutoCompleteTextView android:id="@+id/department" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:completionThreshold="1" android:inputType="text" />
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sudėtingumas" />
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <RatingBar android:id="@+id/rating"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:numStars="4" android:rating="1" android:stepSize="1" />
-                </LinearLayout>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Laikas" />
-                <TimePicker android:id="@+id/time" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:timePickerMode="spinner" />
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data" />
-                <DatePicker android:id="@+id/date" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:datePickerMode="spinner" android:calendarViewShown="false" />
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Miestas" />
-                <Spinner android:id="@+id/city" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:entries="@array/cities" />
-                <Switch android:id="@+id/active" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Aktyvus" />
-                <Button android:id="@+id/submit" android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Rodyti duomenis" />
-            </TableLayout>
+    <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:labelFor="@id/name" android:text="@string/label_name" />
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/name"
+                android:layout_width="240dp" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:inputType="textCapWords"
+                android:autofillHints="name" android:hint="@string/name_hint" />
+        </TableRow>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:labelFor="@id/department" android:text="@string/label_department" />
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <AutoCompleteTextView android:id="@+id/department"
+                android:layout_width="240dp" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:completionThreshold="1"
+                android:inputType="text" android:importantForAutofill="no"
+                android:hint="@string/department_hint" />
+        </TableRow>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:labelFor="@id/rating" android:text="@string/label_rating" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <RatingBar android:id="@+id/rating"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:numStars="4" android:rating="1" android:stepSize="1" />
         </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:labelFor="@id/time" android:text="@string/label_time" />
+        <TimePicker android:id="@+id/time" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:labelFor="@id/date" android:text="@string/label_date" />
+        <DatePicker android:id="@+id/date" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:datePickerMode="spinner" android:calendarViewShown="false" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:labelFor="@id/city" android:text="@string/label_city" />
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Spinner android:id="@+id/city"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:minWidth="120dp" android:minHeight="48dp" android:entries="@array/cities" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.SwitchCompat android:id="@+id/active"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:text="@string/label_active" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/submit"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:text="@string/submit_label" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>

@@ -7,12 +7,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         TimePicker time = findViewById(R.id.time);
         DatePicker date = findViewById(R.id.date);
         Spinner city = findViewById(R.id.city);
-        Switch active = findViewById(R.id.active);
+        SwitchCompat active = findViewById(R.id.active);
 
         String[] departments = getResources().getStringArray(R.array.departments);
         department.setAdapter(new ArrayAdapter<>(this,
