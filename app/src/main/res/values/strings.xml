@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">IIP_LD</string>
+    <string-array name="departments">
+        <item>Mechanikos fakultetas</item>
+        <item>Elektronikos fakultetas</item>
+        <item>Statybos fakultetas</item>
+        <item>Architektūros fakultetas</item>
+        <item>Fundamentinių mokslų fakultetas</item>
+        <item>Transporto inžinerijos fakultetas</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Vilnius</item>
+        <item>Kaunas</item>
+        <item>Klaipėda</item>
+        <item>Akmenė</item>
+    </string-array>
 </resources>
