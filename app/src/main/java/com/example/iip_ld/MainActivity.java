@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         }
         marker.setPosition(point);
         marker.setTitle(lat + ", " + lon);
-        map.getController().setZoom(13.0);
         map.getController().setCenter(point);
         map.invalidate();
 
@@ -77,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
     private double readCoordinate(EditText field) {
         try {
-            return Double.parseDouble(field.getText().toString().trim().replace(',', '.'));
+            String value = field.getText().toString().trim().replace(',', '.').replace('−', '-');
+            return Double.parseDouble(value);
         } catch (NumberFormatException e) {
             return Double.NaN;
         }

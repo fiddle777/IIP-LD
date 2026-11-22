@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/longitude"
-            android:inputType="numberDecimal|numberSigned" />
+            android:inputType="textNoSuggestions"
+            android:singleLine="true" />
 
         <EditText
             android:id="@+id/latitude"
@@ -30,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/latitude"
-            android:inputType="numberDecimal|numberSigned" />
+            android:inputType="textNoSuggestions"
+            android:singleLine="true" />
     </LinearLayout>
 
     <FrameLayout
