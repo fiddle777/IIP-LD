@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IIP_LD</string>
+    <string name="app_name">LD7</string>
     <string name="monitoring">Stebėti akumuliatoriaus lygį</string>
     <string name="monitoring_off">Stebėjimas išjungtas</string>
     <string name="waiting_for_level">Laukiama akumuliatoriaus duomenų</string>

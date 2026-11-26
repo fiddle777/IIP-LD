@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IIP_LD</string>
+    <string name="app_name">LD8</string>
     <string name="hello_world">Hello World!</string>
     <string name="shape_match">Pataikei!</string>
     <string name="shape_miss">Nepataikei!</string>

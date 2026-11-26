@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IIP_LD</string>
+    <string name="app_name">LD4</string>
     <string name="address_hint">https://www</string>
     <string name="load_page">Užkrauti tinklapį</string>
     <string name="browser_instructions">Paspauskite du kartus ant įvedimo lauko, jeigu reikalingas https://www</string>

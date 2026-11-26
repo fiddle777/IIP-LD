@@ -13,24 +13,20 @@ android {
     flavorDimensions += "lab"
 
     productFlavors {
-        create("ld2") {
-            dimension = "lab"
-            applicationIdSuffix = ".ld2"
-        }
-        create("ld3") {
-            dimension = "lab"
-            applicationIdSuffix = ".ld3"
+        for (lab in 2..9) {
+            create("ld$lab") {
+                dimension = "lab"
+                applicationIdSuffix = ".ld$lab"
+            }
         }
     }
 
     sourceSets {
-        getByName("ld2").setRoot("src/ld2/main")
-        getByName("testLd2").setRoot("src/ld2/test")
-        getByName("androidTestLd2").setRoot("src/ld2/androidTest")
-
-        getByName("ld3").setRoot("src/ld3/main")
-        getByName("testLd3").setRoot("src/ld3/test")
-        getByName("androidTestLd3").setRoot("src/ld3/androidTest")
+        for (lab in 2..9) {
+            getByName("ld$lab").setRoot("src/ld$lab/main")
+            getByName("testLd$lab").setRoot("src/ld$lab/test")
+            getByName("androidTestLd$lab").setRoot("src/ld$lab/androidTest")
+        }
     }
 
     defaultConfig {
@@ -63,7 +59,7 @@ val adbPath = androidComponents.sdkComponents.adb
 val baseAppId = android.defaultConfig.applicationId
 val mainActivity = "${android.namespace}.MainActivity"
 
-for (lab in 2..3) {
+for (lab in 2..9) {
     tasks.register<Exec>("runLd$lab") {
         dependsOn("installLd${lab}Debug")
         doFirst {
@@ -77,6 +73,7 @@ for (lab in 2..3) {
 }
 
 dependencies {
+    add("ld9Implementation", "org.osmdroid:osmdroid-android:6.1.20")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

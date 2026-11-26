@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fragmentų pavyzdys</string>
+    <string name="app_name">LD5</string>
     <string name="a_title">Raidės A(a) paieškos fragmentas</string>
     <string name="stats_title">Teksto statistikos fragmentas</string>
     <string name="a_result">Šiame tekste yra %1$d A(a) raidės.</string>
