@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IIP_LD</string>
+    <string name="monitoring">Stebėti akumuliatoriaus lygį</string>
+    <string name="monitoring_off">Stebėjimas išjungtas</string>
+    <string name="waiting_for_level">Laukiama akumuliatoriaus duomenų</string>
+    <string name="battery_level">Akumuliatoriaus lygis: %1$d%%</string>
+    <string name="low_battery">Žemas akumuliatoriaus lygis</string>
+    <string name="battery_alerts">Akumuliatoriaus pranešimai</string>
+    <string name="notifications_disabled">Įjunkite pranešimus programos nustatymuose, kad gautumėte įspėjimus.</string>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lab_6</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="second_text">Pavyzdinis tekstas</string>
+    <string name="exit">Baigti</string>
+    <string name="set_difference">Nustatyti skirtumą</string>
+    <string name="time_difference">Valandų skirtumas</string>
+    <string name="time_title">Skirtumas minutėmis</string>
+    <string name="time_message">Dabartinio ir pasirinkto laiko skirtumas: %1$d min.</string>
+    <string name="count_characters">Simbolių skaičius šiame tekste</string>
+    <string name="show_characters">Simbolių rodymas po vieną</string>
+    <string name="count_title">Simbolių skaičius</string>
+    <string name="count_message">Simbolių skaičius tekste: %1$d</string>
+</resources>

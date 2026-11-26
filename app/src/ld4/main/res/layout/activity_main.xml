@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#624DA1"
+    android:orientation="vertical">
+
+    <!-- Address and load button sit in the same row, as in the handout. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/address_hint"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:textColor="#212121"
+            android:textColorHint="#757575" />
+
+        <Button
+            android:id="@+id/load_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#624DA1"
+            android:text="@string/load_page"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#000000" />
+
+    <!-- The browser fills the space below the address row. -->
+    <WebView
+        android:id="@+id/browser"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF" />
+</LinearLayout>
