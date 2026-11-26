@@ -10,6 +10,29 @@ android {
         }
     }
 
+    flavorDimensions += "lab"
+
+    productFlavors {
+        create("ld2") {
+            dimension = "lab"
+            applicationIdSuffix = ".ld2"
+        }
+        create("ld3") {
+            dimension = "lab"
+            applicationIdSuffix = ".ld3"
+        }
+    }
+
+    sourceSets {
+        getByName("ld2").setRoot("src/ld2/main")
+        getByName("testLd2").setRoot("src/ld2/test")
+        getByName("androidTestLd2").setRoot("src/ld2/androidTest")
+
+        getByName("ld3").setRoot("src/ld3/main")
+        getByName("testLd3").setRoot("src/ld3/test")
+        getByName("androidTestLd3").setRoot("src/ld3/androidTest")
+    }
+
     defaultConfig {
         applicationId = "com.example.iip_ld"
         minSdk = 24
