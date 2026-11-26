@@ -65,7 +65,7 @@ for (lab in 2..9) {
         doFirst {
             commandLine(
                 adbPath.get().asFile.absolutePath,
-                "shell", "am", "start", "-W", "-n",
+                "shell", "am", "start", "-S", "-W", "-n",
                 "$baseAppId.ld$lab/$mainActivity"
             )
         }
