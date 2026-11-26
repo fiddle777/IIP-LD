@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Top: the button, then the two coordinate boxes side by side. -->
     <Button
         android:id="@+id/show_coordinates"
         android:layout_width="match_parent"
@@ -40,11 +41,13 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <!-- The map from the osmdroid library fills the rest of the screen. -->
         <org.osmdroid.views.MapView
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <!-- OpenStreetMap requires showing this credit text on the map. -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:padding="32dp">
 
+        <!-- Shows the text, then the result. freezesText keeps it after rotating the phone. -->
         <TextView
             android:id="@+id/tvCountResult"
             android:layout_width="match_parent"

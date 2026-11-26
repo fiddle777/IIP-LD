@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:padding="32dp">
 
+        <!-- Text box where the user types (multiLine = Enter makes a new line). -->
         <EditText
             android:id="@+id/etInputText"
             android:layout_width="match_parent"

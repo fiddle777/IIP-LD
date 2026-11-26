@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:padding="24dp">
 
+    <!-- On/off switch for battery monitoring, and below it the battery level text. -->
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/monitoring_switch"
         android:layout_width="wrap_content"

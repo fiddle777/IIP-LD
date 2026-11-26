@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IIP_LD">
+        <!-- Every screen (activity) of the app must be listed here. -->
         <activity
             android:name=".WordCountActivity"
             android:exported="false" />
@@ -21,11 +22,13 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
+                <!-- MAIN + LAUNCHER = this is the screen that opens when you tap the app icon. -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
+                <!-- SEND + text/plain = our app appears in other apps' Share list for text. -->
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
