@@ -58,6 +58,24 @@ android {
     }
 }
 
+// Each Run entry installs its own debug variant, then opens that app.
+val adbPath = androidComponents.sdkComponents.adb
+val baseAppId = android.defaultConfig.applicationId
+val mainActivity = "${android.namespace}.MainActivity"
+
+for (lab in 2..3) {
+    tasks.register<Exec>("runLd$lab") {
+        dependsOn("installLd${lab}Debug")
+        doFirst {
+            commandLine(
+                adbPath.get().asFile.absolutePath,
+                "shell", "am", "start", "-W", "-n",
+                "$baseAppId.ld$lab/$mainActivity"
+            )
+        }
+    }
+}
+
 dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
